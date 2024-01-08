@@ -24,4 +24,3 @@ item =  PyList_GetItem(p, i);
 printf("Element %d: %s\n", i, Py_TYPE(item)->tp_name);
 }
 }
-
