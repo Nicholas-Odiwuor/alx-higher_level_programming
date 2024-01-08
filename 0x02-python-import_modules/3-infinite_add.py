@@ -21,3 +21,5 @@ if __name__ == "__main__":
             summ += int(sys.argv[i])
 
     print("{:d}".format(summ))
+
+    #Nicholas Odiwuor
