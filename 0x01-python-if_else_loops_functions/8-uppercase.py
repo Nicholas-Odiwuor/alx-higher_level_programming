@@ -1,8 +1,9 @@
-def uppercase(s):
-    for char in s:
-        print(chr(ord(char) - 32) if 97 <= ord(char) <= 122 else char, end="")
-    print()
+#!/usr/bin/python3
 
-# Test the function
-uppercase("Hello, World!")
+def uppercase(str):
+    for ch in str:
+        if ord(ch) >= 97 and ord(ch) <= 122:
+            ch = chr(ord(ch) - 32)
+        print("{:s}".format(ch), end='')
 
+    print('\n', end="")
