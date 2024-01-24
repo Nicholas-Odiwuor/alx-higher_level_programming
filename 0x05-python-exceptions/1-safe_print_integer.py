@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 
 def safe_print_integer(value):
-    """
-    Prints an integer with "{:d}".format().
+    """Prints an integer with "{:d}".format().
 
     Parameters:
         value: The value to be printed.
@@ -19,4 +18,5 @@ def safe_print_integer(value):
 
 if __name__ == "__main__":
     pass
+
 
