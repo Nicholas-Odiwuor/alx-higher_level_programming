@@ -11,7 +11,7 @@ if __name__ == "__main__":
     if len(argv) != 2:
         print("Usage: nqueens N")
         exit(1)
-    if argv[1].isdigit() is False:
+    if not argv[1].isdigit():
         print("N must be a number")
         exit(1)
     n = int(argv[1])
