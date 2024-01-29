@@ -11,7 +11,7 @@ if __name__ == "__main__":
     if len(argv) != 2:
         print("Usage: nqueens N")
         exit(1)
-    if not argv[1].isdigit():
+    if argv[1].isdigit() is False:
         print("N must be a number")
         exit(1)
     n = int(argv[1])
@@ -19,15 +19,19 @@ if __name__ == "__main__":
         print("N must be at least 4")
         exit(1)
 
+    # Initialize the answer list
+    for i in range(n):
+        a.append([i, None])
+
     def already_exists(y):
-        """check that a queen does not already exist in that y value"""
+        """Check that a queen does not already exist in that y value"""
         for x in range(n):
             if y == a[x][1]:
                 return True
         return False
 
     def reject(x, y):
-        """determines whether or not to reject the solution"""
+        """Determines whether or not to reject the solution"""
         if already_exists(y):
             return False
         i = 0
@@ -37,31 +41,22 @@ if __name__ == "__main__":
             i += 1
         return True
 
-    def print_solution():
-        """prints the solution in the required format"""
-        for i in range(n):
-            print([i, a[i][1]])
-
     def clear_a(x):
-        """clears the answers from the point of failure on"""
+        """Clears the answers from the point of failure on"""
         for i in range(x, n):
             a[i][1] = None
 
     def nqueens(x):
-        """recursive backtracking function to find the solution"""
+        """Recursive backtracking function to find the solution"""
         for y in range(n):
             clear_a(x)
             if reject(x, y):
                 a[x][1] = y
-                if x == n - 1:
-                    print_solution()
+                if x == n - 1:  # Accepts the solution
+                    print(a)
                 else:
-                    nqueens(x + 1)
+                    nqueens(x + 1)  # Moves on to the next x value to continue
 
-    # initialize the answer list
-    for i in range(n):
-        a.append([i, None])
-
-    # start the recursive process at x = 0
+    # Start the recursive process at x = 0
     nqueens(0)
 
