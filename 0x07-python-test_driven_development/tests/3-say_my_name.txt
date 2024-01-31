@@ -1,0 +1,26 @@
+# Test cases for say_my_name function
+
+# Test Case 1: Valid names
+>>> say_my_name("John", "Smith")
+My name is John Smith
+
+# Test Case 2: Valid names
+>>> say_my_name("Walter", "White")
+My name is Walter White
+
+# Test Case 3: Missing last name
+>>> say_my_name("Bob")
+My name is Bob
+
+# Test Case 4: Invalid first name (expects a TypeError)
+>>> say_my_name(12, "White")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+# Test Case 5: Invalid last name (expects a TypeError)
+>>> say_my_name("John", 123)
+Traceback (most recent call last):
+    ...
+TypeError: last_name must be a string
+
