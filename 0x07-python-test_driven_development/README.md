@@ -21,11 +21,16 @@
 - All modules should have documentation (`python3 -c 'print(__import__("my_module").__doc__)'`)
 - All functions should have documentation (`python3 -c 'print(__import__("my_module").my_function.__doc__)'`)
 - Documentation is not a simple word; it’s a real sentence explaining the purpose of the module, class, or method (length will be verified)
-- Collaboration on test cases is encouraged to cover all edge cases – The Checker checks for tests!
+- Collaboration on test cases is encouraged to cover all edge cases – The Checker is checking for tests!
 
 ## Project Overview
 
-This project focuses on test-driven development (TDD) in Python. It aims to develop Python scripts and corresponding test cases to adhere to the specified requirements.
+This project focuses on test-driven development (TDD) in Python. It includes a function that adds two integers with specific requirements and corresponding test cases.
+
+## File Structure
+
+- `0-add_integer.py`: Python script containing the `add_integer` function
+- `tests/0-add_integer.txt`: Test cases for the `add_integer` function
 
 ## How to Use
 
