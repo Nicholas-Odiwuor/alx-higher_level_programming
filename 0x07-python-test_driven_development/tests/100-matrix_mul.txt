@@ -1,0 +1,59 @@
+#!/usr/bin/python3
+"""
+Unittests for matrix_mul function
+"""
+
+import unittest
+matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+class TestMatrixMul(unittest.TestCase):
+    """
+    Test cases for matrix_mul function
+    """
+
+    def test_matrix_mul(self):
+        """
+        Test matrix_mul with various matrices.
+        """
+        self.assertEqual(matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]), [[7, 10], [15, 22]])
+        self.assertEqual(matrix_mul([[1, 2]], [[3, 4], [5, 6]]), [[13, 16]])
+
+    def test_invalid_matrices(self):
+        """
+        Test matrix_mul with invalid matrices.
+        """
+        with self.assertRaises(TypeError):
+            matrix_mul([1, 2, 3], [[1, 2], [3, 4]])
+        with self.assertRaises(TypeError):
+            matrix_mul([[1, 2], [3, 4]], [1, 2, 3])
+        with self.assertRaises(TypeError):
+            matrix_mul([[1, 2], [3, 4]], [[1, 2, 3], [4, 5, 6]])
+
+    def test_empty_matrices(self):
+        """
+        Test matrix_mul with empty matrices.
+        """
+        with self.assertRaises(ValueError):
+            matrix_mul([], [])
+        with self.assertRaises(ValueError):
+            matrix_mul([[1, 2], [3, 4]], [])
+
+    def test_non_rectangular_matrices(self):
+        """
+        Test matrix_mul with non-rectangular matrices.
+        """
+        with self.assertRaises(TypeError):
+            matrix_mul([[1, 2], [3, 4, 5]], [[1, 2], [3, 4]])
+        with self.assertRaises(TypeError):
+            matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4, 5]])
+
+    def test_unmultiplicable_matrices(self):
+        """
+        Test matrix_mul with matrices that can't be multiplied.
+        """
+        with self.assertRaises(ValueError):
+            matrix_mul([[1, 2, 3], [4, 5, 6]], [[1, 2], [3, 4], [5, 6]])
+
+if __name__ == '__main__':
+    unittest.main()
+
