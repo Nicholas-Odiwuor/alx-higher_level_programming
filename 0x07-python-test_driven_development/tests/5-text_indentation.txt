@@ -1,0 +1,27 @@
+# Test cases for text_indentation function
+
+# Test Case 1: Regular sentence
+>>> text_indentation("This is a simple sentence.")
+This is a simple sentence.
+
+# Test Case 2: Multiple spaces after punctuation
+>>> text_indentation("This is another...     sentence")
+This is another...
+    sentence
+
+# Test Case 3: No space after punctuation
+>>> text_indentation("Sentence with:no space after.colon")
+Sentence with:
+no space after.
+colon
+
+# Test Case 4: No new line needed (expects no new line)
+>>> text_indentation("No new line needed")
+No new line needed
+
+# Test Case 5: Input is not a string (expects a TypeError)
+>>> text_indentation(123)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
