@@ -1,6 +1,6 @@
 -- Script to list all tables in a database
 
-USE mysql; --mysql
+USE mysql; -- mysql
 
 SHOW TABLES;
 
