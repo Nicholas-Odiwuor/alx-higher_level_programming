@@ -1,4 +1,6 @@
--- Lists all tables in the specified database
-USE database_name;
+-- Script to list all tables in a database
+
+USE mysql; --mysql
+
 SHOW TABLES;
 
